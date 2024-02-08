@@ -10,6 +10,8 @@
 #include <vector>
 #include <string>
 #include <my_format_shift.hpp>
+#include <my_api_cmd.hpp>
+#include <main_header.hpp>
 #include <my_tests.hpp>
 
 #endif

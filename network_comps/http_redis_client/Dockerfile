@@ -50,6 +50,15 @@ RUN wget -O google-test.zip https://github.com/google/googletest/archive/03597a0
     cd ../../ && \
     rm -rf google-test.zip googletest-*
 
+RUN RUN npm install -g yarn
+
+RUN apt-get remove -y nodejs npm || true
+
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # Reset environment variable
 ENV DEBIAN_FRONTEND=
 

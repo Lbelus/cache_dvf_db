@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redis Interaction</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="key" placeholder="Enter key">
+        <button onclick="getValue()">Get Value</button>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        function getValue() {
+            var key = document.getElementById('key').value;
+            fetch('/get/' + key)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('result').innerText = data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
